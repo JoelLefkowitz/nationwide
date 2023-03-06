@@ -1,0 +1,10 @@
+{
+  "verbose": true,
+  "restoreMocks": true,
+  "transform": {
+    "^.+\\.ts?$": "ts-jest"
+  },
+  "modulePathIgnorePatterns": ["samples/invalid"],
+  "collectCoverage": true,
+  "coverageReporters": ["lcov"]
+}
