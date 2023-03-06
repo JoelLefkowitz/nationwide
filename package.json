@@ -1,7 +1,7 @@
 {
   "name": "nationwide",
   "description": "A Nationwide transactions table parser.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": "https://github.com/joellefkowitz/nationwide",
   "homepage": "https://nationwide.readthedocs.io",
   "author": "Joel Lefkowitz",
