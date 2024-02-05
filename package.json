@@ -1,7 +1,7 @@
 {
   "name": "nationwide",
   "description": "A Nationwide transactions table parser.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": false,
   "license": "MIT",
   "author": "Joel Lefkowitz",
