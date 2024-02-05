@@ -30,7 +30,7 @@ describe("Transaction.parse", () => {
                 </tr>
             </tbody>
         </table>
-    `)
+    `),
     ).toEqual([
       {
         date: "2023-01-01",
@@ -59,7 +59,7 @@ describe("Transaction.parse", () => {
                 </tr>
               </tbody>
           </table>
-        `)
+        `),
     ).toThrow();
   });
 });
@@ -89,7 +89,7 @@ describe("Transaction.collate", () => {
           change: -20,
           balance: 30,
         },
-      ])
+      ]),
     ).toEqual({
       "UBER *TRIP HELP.UBER.COM FR": -20,
       "UBER *TRIP HELP.UBER.COM GB": -10,

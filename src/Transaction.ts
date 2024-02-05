@@ -3,8 +3,8 @@ import { groupBy, prop, sortBy, sum } from "ramda";
 import { number, object, string, validate } from "superstruct";
 
 import { DateTime } from "luxon";
-import dedent from "dedent";
 import { pounds } from "./numbers";
+import dedent from "dedent";
 
 export class Transaction {
   date: string;
@@ -26,7 +26,7 @@ export class Transaction {
           .split("\n")
           .filter((i) => i !== "")
           .join(" ")
-          .trim()
+          .trim(),
       );
 
     const iso = (date: string) =>
@@ -48,7 +48,7 @@ export class Transaction {
         sent: number(),
         received: number(),
         balance: number(),
-      })
+      }),
     );
 
     if (error) {
@@ -76,9 +76,9 @@ export class Transaction {
         ([_, v]) => v,
         Object.entries(groupBy(prop("account"), transactions)).map(([k, v]) => [
           k,
-          sum(v.map(prop("change"))),
-        ])
-      )
+          sum((v ?? []).map(prop("change"))),
+        ]),
+      ),
     );
   }
 }
