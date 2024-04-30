@@ -2,7 +2,6 @@
   "name": "nationwide",
   "description": "A Nationwide transactions table parser.",
   "version": "0.3.0",
-  "private": false,
   "license": "MIT",
   "author": "Joel Lefkowitz",
   "repository": "https://github.com/joellefkowitz/nationwide",
@@ -15,6 +14,7 @@
     "nationwide",
     "parser"
   ],
+  "packageManager": "yarn@4.1.1",
   "metadata": {
     "publisher": "npm",
     "languages": [
@@ -27,12 +27,16 @@
     "lifecycle": "Alpha"
   },
   "scripts": {
-    "prepare": "husky",
-    "lint": "cspell . --dot && eslint . --fix && tsc --noEmit",
+    "postinstall": "husky",
+    "lint": "cspell . --dot --gitignore && eslint . --fix && tsc --noEmit && trufflehog3",
     "format": "prettier . --write",
     "build": "tsc",
     "test": "jest",
-    "docs": "typedoc"
+    "docs": "typedoc --options docs/typedoc/typedoc.json && ts-node ./docs/typedoc/assets.ts"
+  },
+  "resolutions": {
+    "cliui": "^8.0.1",
+    "strip-ansi": "^6.0.1"
   },
   "dependencies": {
     "luxon": "^3.4.4",
@@ -41,6 +45,7 @@
     "superstruct": "^1.0.3"
   },
   "devDependencies": {
+    "@types/glob": "^8.1.0",
     "@types/jest": "29.0.0",
     "@types/luxon": "^3.4.2",
     "@types/node": "^18.11.0",
@@ -54,11 +59,12 @@
     "husky": "^9.0.0",
     "jest": "^29.0.0",
     "prettier": "^3.0.0",
+    "prettier-plugin-jsdoc": "^1.3.0",
     "ts-jest": "^29.0.0",
     "ts-node": "^10.9.2",
     "tslib": "^2.3.0",
     "typedoc": "^0.25.7",
     "typedoc-material-theme": "^1.0.2",
-    "typescript": "^5.3.0"
+    "typescript": "~5.3.0"
   }
 }

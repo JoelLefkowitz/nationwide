@@ -5,6 +5,7 @@ A Nationwide transactions table parser.
 ![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/nationwide/review.yml)
 ![Version](https://img.shields.io/npm/v/nationwide)
 ![Downloads](https://img.shields.io/npm/dw/nationwide)
+![Size](https://img.shields.io/bundlephobia/min/nationwide)
 ![Quality](https://img.shields.io/codacy/grade/8fb4d0f0694748c188e083f00ae4ff9f)
 ![Coverage](https://img.shields.io/codacy/coverage/8fb4d0f0694748c188e083f00ae4ff9f)
 
@@ -71,9 +72,7 @@ import fs from "fs";
 import path from "path";
 import { Transaction } from "./Transaction";
 
-const transactions = Transaction.table(
-  fs.readFileSync(path.join(__dirname, "nationwide.html"), "utf8"),
-);
+const transactions = Transaction.table(fs.readFileSync(path.join(__dirname, "nationwide.html"), "utf8"));
 ```
 
 ```json
@@ -116,6 +115,14 @@ Transaction.collate(transactions);
 ```
 
 ## Tooling
+
+### Dependencies
+
+To install dependencies:
+
+```bash
+yarn install
+```
 
 ### Tests
 
@@ -169,8 +176,8 @@ bump2version patch
 
 Lots of love to the open source community!
 
-<p align='center'>
+<div align='center'>
     <img width=200 height=200 src='https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif' alt='Be kind to your mind' />
     <img width=200 height=200 src='https://media.giphy.com/media/KEAAbQ5clGWJwuJuZB/giphy.gif' alt='Love each other' />
     <img width=200 height=200 src='https://media.giphy.com/media/WRWykrFkxJA6JJuTvc/giphy.gif' alt="It's ok to have a bad day" />
-</p>
+</div>
