@@ -1,7 +1,7 @@
 {
   "name": "nationwide",
   "description": "A Nationwide transactions table parser.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "MIT",
   "author": "Joel Lefkowitz",
   "repository": "https://github.com/joellefkowitz/nationwide",
